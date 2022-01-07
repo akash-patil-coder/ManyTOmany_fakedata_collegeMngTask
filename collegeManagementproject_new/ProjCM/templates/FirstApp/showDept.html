@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  <title>Department</title>
+{% endblock %}
+{% block search %}
+    <ul class="navbar-nav ml-auto ">
+        <form method="post" class="form-inline" style="margin-right:auto">
+            {% csrf_token %}
+            <input class="form-control mr-sm-2" type="search" name="searchdata" placeholder="Search" aria-label="Search" required>
+            <button class="btn btn-success " type="submit">Department</button>
+        </form>
+    </ul>
+{% endblock %}
+
+
+{% block content %}
+<div class="container" style="width:50%">
+  <table class="table table-dark" >
+    <tr>
+      <th>ID</th>
+      <th>Department Name</th>
+      <th>Intake</th>
+      <th>Action</th>
+      <th>Action</th>
+    </tr>
+    {% for dept in dept_object %}
+      <tr>
+        <td>{{dept.id}}</td>
+        <td>{{dept.dept_Name}}</td>
+        <td>{{dept.intake}}</td>
+        <td><a href="{% url 'update_dept' dept.id %}"><button class="btn btn-warning">Update</button></a></td>
+        <td><a href="{% url 'Delete_dept' dept.id %}"><button class="btn btn-danger">Delete</button></a></td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}
+
+
+

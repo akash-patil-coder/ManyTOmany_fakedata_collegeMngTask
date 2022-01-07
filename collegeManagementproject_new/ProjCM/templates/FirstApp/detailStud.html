@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+    <title> Student-Detail</title>
+{% endblock %}
+{% block content %}
+<section class="vh-100" >
+<div class="container" style="width:30%;">
+  <div class="jumbotron">
+  <h6 style="color:red;">Student Detail</h6>
+  <p class="text-muted">Roll Number : {{stud_object.roll_no}}</p>
+  <p class="text-muted">Name : {{stud_object.stud_name}} </p>
+  <p class="text-muted">Marks : {{stud_object.marks}} </p>
+  <p class="text-muted">Department : {{stud_object.department.dept_Name}} </p>
+ </div>
+</div>
+</section>
+{% endblock %}

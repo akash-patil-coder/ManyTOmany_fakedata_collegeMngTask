@@ -1,0 +1,36 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css");
+.mynavbar
+{
+    background-color : olive;
+    list-style-type : none;
+    overflow : hidden;
+    margin : 0;
+    padding :0;
+}
+
+li{
+    float : left;
+}
+
+li a
+{
+    padding:15px 15px 15px 5px;
+    color : black;
+    display : block;
+}
+
+li a:hover
+{
+    background-color : coral;
+}
+
+.authlinks
+{
+    float:right;
+}
+
+body {
+    background-image: url("Capture_1.JPG");
+    background-repeat: no-repeat;
+}
+

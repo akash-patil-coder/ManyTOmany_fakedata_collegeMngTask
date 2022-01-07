@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Add-Department</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container" style="width:50%; color:#C70039; bgcolor=lightgreen" >
+        <form method="post" class="jumbotron" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form|crispy}}
+            <input type="submit" value="Add-Department" class="btn btn-success">
+            <a href="{% url 'Show-Dept' %}"><button type="button" class="btn btn-primary">Department</button></a>
+        </form>
+    </div>
+<br><br><br><br>
+{% endblock %}
+

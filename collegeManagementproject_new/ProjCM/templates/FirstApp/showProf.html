@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  <title>Professors</title>
+{% endblock %}
+{% block search %}
+    <ul class="navbar-nav ml-auto ">
+        <form method="post" class="form-inline mr-auto">
+            {% csrf_token %}
+            <input class="form-control mr-sm-2" type="search" name="searchdata" placeholder="Search" aria-label="Search">
+            <button class="btn btn-success " type="submit">Professor</button>
+        </form>
+    </ul>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="width:70%">
+  <table class="table table-dark" >
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Department</th>
+      <th>Action</th>
+      <th>Action</th>
+
+    </tr>
+    {% for prof in prof_object %}
+      <tr>
+        <td>{{prof.id}}</td>
+        <td>{{prof.prof_name}}</td>
+        <td>{{prof.sal}}</td>
+        <td>
+          {% for dept in prof.department.all %}
+            {{dept.dept_Name}}
+            <br>
+          {% endfor %}
+        </td>
+        <td><a href="{% url 'update_prof' prof.id %}"><button class="btn btn-warning">Update</button></a></td>
+        <td><a href="{% url 'Delete_prof' prof.id %}"><button class="btn btn-danger">Delete</button></a></td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+
+{% endblock %}

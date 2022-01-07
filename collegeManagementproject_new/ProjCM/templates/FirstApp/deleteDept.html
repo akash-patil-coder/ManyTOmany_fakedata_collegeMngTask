@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    <title>Delete-Department</title>
+{% endblock %}
+
+{% block content %}
+<div class="container" style="width:40%">
+    <form method="post" class="jumbotron">
+        <h2 style="color:red">Confirm Delete</h2>
+        <p> are you sure to delete department name is {{dept_object.dept_Name}} and intake is {{dept_object.intake}} ?</p>
+        {% csrf_token %}
+        <a href="{% url 'Delete_dept' dept_object.id %}"><button class="btn btn-danger">Delete</button></a>
+        <a href="{% url 'Show-Dept' %}"><button type="button" class="btn btn-warning">Cancel</button></a>
+    </form>
+    <br>
+
+</div>
+
+{% endblock %}

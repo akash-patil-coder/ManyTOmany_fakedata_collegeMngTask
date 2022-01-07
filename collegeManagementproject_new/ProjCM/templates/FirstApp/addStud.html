@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    <title>Add-Student</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container" style="width:50%; color:#C70039; bgcolor=lightgreen" >
+        <form method="post" class="jumbotron" >
+            {% csrf_token %}
+            {{form|crispy}}
+            <input type="submit" value="Add-Student" class="btn btn-success">
+            <a href="{% url 'Show-Stud' %}"><button type="button" class="btn btn-primary">Student-list</button></a>
+        </form>
+
+    </div>
+<br><br><br><br>
+{% endblock %}

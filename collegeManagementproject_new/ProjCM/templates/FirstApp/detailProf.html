@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+    <title> Professor-Detail</title>
+{% endblock %}
+{% block content %}
+<table>
+    <tr>
+        <td>Dept ID</td>
+        <td>Dept Name</td>
+        <td>Dept Intake</td>
+    </tr>
+    {% for obj in prof_object_1 %}
+        <tr>
+            <th>{{obj.department.id}}</th>
+            <th>{{obj.department.dept_Name}}</th>
+            <th>{{obj.department.intake}}</th>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
